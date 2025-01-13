@@ -1,5 +1,5 @@
 import scrapy
-
+from ..items import BookItem
 
 class DowloadingTestSpider(scrapy.Spider):
     name = "dowloading_test"
@@ -7,4 +7,12 @@ class DowloadingTestSpider(scrapy.Spider):
     start_urls = ["https://scrapebay.com/ebooks"]
 
     def parse(self, response):
-        pass
+        for book in response.css('.col'):
+            title = book.css('h5 ::text').get()
+            link = response.urljoin(
+                book.css('a.pdf ::attr(href)').get()
+            )
+            yield {
+                'Title': title,
+                'file_urls': [link]
+            }

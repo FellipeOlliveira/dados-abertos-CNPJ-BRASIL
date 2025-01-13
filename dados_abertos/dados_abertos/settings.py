@@ -17,7 +17,7 @@ NEWSPIDER_MODULE = "dados_abertos.spiders"
 #USER_AGENT = "dados_abertos (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -62,10 +62,11 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "dados_abertos.pipelines.DadosAbertosPipeline": 300,
-#}
-
+ITEM_PIPELINES = {
+#      "dados_abertos.pipelines.DadosAbertosPipeline": 300,
+      "scrapy.pipelines.files.FilesPipeline": 1
+}
+FILES_STORE = "downloaded_test_files"
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
