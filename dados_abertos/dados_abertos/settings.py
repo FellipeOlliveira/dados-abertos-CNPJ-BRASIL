@@ -62,9 +62,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "dados_abertos.pipelines.DadosAbertosPipeline": 300,
-#}
+ITEM_PIPELINES = {
+    #"dados_abertos.pipelines.DadosAbertosPipeline": 300,
+    "scrapy.pipelines.files.FilesPipeline": 1
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -90,3 +91,4 @@ ROBOTSTXT_OBEY = True
 # Set settings whose default value is deprecated to a future-proof value
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+FILES_STORE = "dados_abertos/downloaded_content"
