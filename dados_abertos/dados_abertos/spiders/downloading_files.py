@@ -25,10 +25,11 @@ class DownloadingFilesSpider(scrapy.Spider):
             callback=self.parse
         )
 
-
-
     def parse(self, response):
-        for link in response.xpath("//a[contains(text(), 'Estabelecimentos') or contains(text(), 'Empressas')]/@href"):
+        link = response.xpath("//a[contains(text(), 'Empresas') or contains(text(), 'Estabelecimento')]/@href")
+
+        for link in response.xpath("//a[contains(text(), 'Empresas') or contains(text(), 'Estabelecimento')]/@href"):
+        #for link in response.xpath("//a[contains(text(), 'Empresas1')]/@href"):
 
             link_reference = link.get()
 
