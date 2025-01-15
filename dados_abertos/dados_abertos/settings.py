@@ -8,7 +8,7 @@
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 BOT_NAME = "dados_abertos"
-
+import scrapy.core.downloader.handlers.http11
 SPIDER_MODULES = ["dados_abertos.spiders"]
 NEWSPIDER_MODULE = "dados_abertos.spiders"
 
@@ -62,10 +62,12 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "dados_abertos.pipelines.DadosAbertosPipeline": 300,
-#}
-
+ITEM_PIPELINES = {
+    #"dados_abertos.pipelines.DadosAbertosPipeline": 300,
+    "dados_abertos.pipelines.CustomFilesPipeline": 1,
+    #"scrapy.pipelines.files.FilesPipeline": 1,
+}
+FILES_STORE = "downloaded_content"
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
@@ -90,3 +92,9 @@ ROBOTSTXT_OBEY = True
 # Set settings whose default value is deprecated to a future-proof value
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+#Download config
+DOWNLOAD_WARNSIZE = 15473797644  # Set limit to match file size (be mindful of resource usage)
+DOWNLOAD_TIMEOUT = 3600
+DOWNLOAD_DELAY = 5
+DOWNLOAD_MAXSIZE = 15473797644

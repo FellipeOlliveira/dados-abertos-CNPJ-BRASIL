@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab61c76-ea77-4696-b4e3-20f7556fc3a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/dados_abertos/dados_abertos/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/dados_abertos/dados_abertos/pipelines.py" afterDir="false" />
-    </list>
+    <list default="true" id="eab61c76-ea77-4696-b4e3-20f7556fc3a3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,8 +28,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.dowloading_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_request.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+    &quot;git-widget-placeholder&quot;: &quot;big__file__dwld__test&quot;
   }
 }</component>
   <component name="SharedIndexes">
