@@ -28,6 +28,14 @@ class DownloadingFilesSpider(scrapy.Spider):
 
 
     def parse(self, response):
-        response.xpath("//a[contains(text(), 'Estabelecimentos') or contains(text(), 'Empressas')]/@href")
+        link = response.xpath("//a[contains(text(), 'Empresas') or contains(text(), 'Estabelecimento')]/@href")
 
-        
+        for link in response.xpath("//a[contains(text(), 'Empresas') or contains(text(), 'Estabelecimento')]/@href"):
+            # for link in response.xpath("//a[contains(text(), 'Empresas1')]/@href"):
+
+            link_reference = link.get()
+
+            yield {
+                'title': link_reference,
+                'file_urls': [response.urljoin(str(link_reference))]
+            }
