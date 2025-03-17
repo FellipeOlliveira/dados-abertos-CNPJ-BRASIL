@@ -2,3 +2,4 @@
 /dados_abertos/dados_abertos_request/RF_parquet
 /dados_abertos/dados_abertos_request/RF_csv
 /.idea
+/dados_abertos/dados_abertos_request/__pycache__
